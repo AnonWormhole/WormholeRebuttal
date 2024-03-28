@@ -8,8 +8,10 @@ Other methods are more appropriate at tiny cohorts, as they do not require train
 
 We note that several points in the figure above are projections. Pairwise computation for each cohort was done in batches, and we simply measured the time it took for Sinkhorn, LR Sinkhorn and Meta-OT to go through 100 batches and extrapolated for an estiamte of how long the entire sample would take.
 
-We next extended our comparison to other Wasserstein Embedding methods to include DWE from ‘Learning Wasserstein Embeddings’, in addition to DiffusionEMD and Frechet based approximation. Despite the DWE code being defunct, we have completely updated it to python3 and JAX during the rebuttal period. We show that on low dimensional 2D and 3D point clouds, Wormhole produces finer embeddings.
+We next extended our comparisons and evaluated Wormhole against DWE from ‘Learning Wasserstein Embeddings’, in addition to DiffusionEMD and Frechet based approximation. Despite the DWE code being defunct, we have completely updated it to python3 and JAX during the rebuttal period. We show that on low dimensional 2D and 3D point clouds, Wormhole produces finer embeddings.
+
 Wormhole is also the only current OT based embedding method which can be applied to high-dimensional point-clouds. We further demonstrate this key feature by extending our manuscript to include two additional datasets: A scRNA-seq atlas of COVID patients and a spatial transcriptomics (seqFISH) dataset of mouse embryogenesis. Wormhole can produce accurate and OT preserving embeddings, while all other methods produce OOM errors.
+
 Finally, we have also updated our correlation scores to include average and standard deviations of 10 random samples of 128 points, as requested by several reviewers.
 
 ![alt text](Tables/Table1.png?raw=true)
