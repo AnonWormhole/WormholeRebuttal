@@ -1,14 +1,14 @@
 # Rebuttal
 
 We are grateful to the reviewers for coming to our Rebuttal page. Here we have compiled new figures and tables which were relevant for the revision and requested by the reviewers. 
-First, as requested by almost all reviewers, we have compiled a benchmarking study comparing Wormhole to current approaches for compuing Wasserstein distance and acceleration thereof. Briefly, we sampled different sized cohorts from each dataset (MNIST or ModelNet40) and measured the time required for Wormhole, Sinkhorn, Low Rank (LR) Sinkhorn and MetaOT to produce the pairwise distance matrix, on a fully utilized 80GB GPU.  
-Other methods are more appropriate at tiny cohorts, as they do not require training a large, parametric model. However, even in cohorts with relatively few samples, Wormhole is superior. No method other than Wormhole can scale to complete datasets, requiring weeks of GPU time.
+
+First, as requested by almost all reviewers, we have compiled a benchmarking study comparing Wormhole to current approaches for compuing Wasserstein distance and acceleration thereof. Briefly, we sampled different sized cohorts from each dataset (MNIST or ModelNet40) and measured the time required for Wormhole, Sinkhorn, Low Rank (LR) Sinkhorn and MetaOT to produce the pairwise distance matrix, on a fully utilized 80GB GPU.  Other methods are more appropriate at tiny cohorts, as they do not require training a large, parametric model. However, even in cohorts with relatively few samples, Wormhole is superior. No method other than Wormhole can scale to complete datasets, requiring weeks of GPU time.
 
 We note that several points in the figure bellow are projections. Pairwise computation for each cohort was done in batches, and we simply measured the time it took for Sinkhorn, LR Sinkhorn and Meta-OT to go through 100 batches and extrapolated for an estiamte of how long the entire sample would take. Please see details in notebooks MNIST_time_comparison.ipynb & ModelNet40_time_comparison.ipynb.
 
 ![alt text](RebuttalFigures/TimeComparisonAll.png?raw=true)
 
-We next extended our comparisons and evaluated Wormhole against DWE from ‘Learning Wasserstein Embeddings’, in addition to DiffusionEMD and Frechet based approximation. Despite the DWE code being defunct, we have completely updated it to python3 and JAX during the rebuttal period. We show that on low dimensional 2D and 3D point clouds, Wormhole produces finer embeddings.
+We next extended our comparisons and evaluated Wormhole against DWE from ‘Learning Wasserstein Embeddings’, in addition to DiffusionEMD and Frechet based approximation. Despite the DWE code being defunct, we have completely updated it to python3 and JAX during the rebuttal period (https://github.com/AnonWormhole/jax_dwe/tree/main). We show that on low dimensional 2D and 3D point clouds, Wormhole produces finer embeddings.
 
 Wormhole is also the only current OT based embedding method which can be applied to high-dimensional point-clouds. We further demonstrate this key feature by extending our manuscript to include two additional datasets: A scRNA-seq atlas of COVID patients and a spatial transcriptomics (seqFISH) dataset of mouse embryogenesis. Wormhole can produce accurate and OT preserving embeddings, while all other methods produce OOM errors.
 
