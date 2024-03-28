@@ -16,7 +16,7 @@ Finally, we have also updated our correlation scores to include average and stan
 
 ![alt text](Tables/Table1.png?raw=true)
 
-Not only relying on correlation with true Wasserstein distances, we also compute MSE, and show Wormhole consistently outperforms DWE. DiffusionEMD was not included in this comparison since its embeddings are only correlated with OT, rather than approach it.
+Not only relying on correlation with true Wasserstein distances, we also compute MSE, and show Wormhole consistently outperforms DWE. DiffusionEMD was not included in this comparison since its embeddings are only correlated with OT, rather than approach it. Frechet was also excluded since it approximates un-regularized Wasserstein, unlike Wormhole and DWE which fit to entropic OT.
 
 ![alt text](Tables/Table3.png?raw=true)
 
