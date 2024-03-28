@@ -13,7 +13,7 @@ Not only relying on correlation with true Wasserstein distances, we also compute
 ![alt text](Tables/Table3.png?raw=true)
 As requested by reviewers ‘3vyc’ and ‘Asp1’, we have ablated the impact of batch size on Wormhole training. As the figure below shows, the larger the size of the training batch, the better the test-set loss curves, as expected. This however comes at a cost, since computational complexity grows quadratically with batch size, as Wormhole computes the pairwise Wasserstein distance within each batch. All experiments in the paper used a batch size of 16, showing we can get great accuracy at remarkable speed.
 ![alt text](RebuttalFigures/BatchSizeAblation.png?raw=true)
-Reviewer ‘Asp1’ also questioned whether there are differences between training and test set losses during Wormhole training. We are happy to find virtually no differences between them.
+Reviewer ‘Asp1’ also questioned whether there are differences between training and test set losses during Wormhole training. We are happy to find virtually no differences between them on the MNIST dataset.
 ![alt text](RebuttalFigures/LossCurves.png?raw=true)
 Finally, reviewer  ‘Asp1’ raised concerns about the use of an MLP in obtaining class predictions from Wormhole embeddings. Since the embeddings are in 128 dimensions, we chose a deep model to classify them. For fairness, embeddings from DWE were treated in the same manner. Still, we find that even when an unideal linear classifier is used, test-set classification is still high and competitive with other methods. 
 ![alt text](Tables/Table4.png?raw=true)
