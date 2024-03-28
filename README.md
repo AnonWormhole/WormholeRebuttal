@@ -16,7 +16,7 @@ Not only relying on correlation with true Wasserstein distances, we also compute
 
 ![alt text](Tables/Table3.png?raw=true)
 
-As requested by reviewers ‘3vyc’ and ‘Asp1’, we have ablated the impact of batch size on Wormhole training. As the figure below shows, the larger the size of the training batch, the better the test-set loss curves, as expected. This however comes at a cost, since computational complexity grows quadratically with batch size, as Wormhole computes the pairwise Wasserstein distance within each batch. All experiments in the paper used a batch size of 16, showing we can get great accuracy at remarkable speed.
+As requested by reviewers ‘3vyc’ and ‘Asp1’, we have ablated the impact of batch size on Wormhole training. As the figure below shows, the larger the size of the training batch, the better the test-set loss curves, as expected. This however comes at a cost, since computational complexity grows quadratically with batch size, as training requires computing the pairwise Wasserstein distance within each batch. All experiments in the paper used a batch size of 16, showing we can get great accuracy at remarkable speed.
 
 ![alt text](RebuttalFigures/BatchSizeAblation.png?raw=true)
 
