@@ -4,7 +4,7 @@ We are grateful to the reviewers for coming to our Rebuttal page. Here we have c
 First, as requested by almost all reviewers, we have compiled a benchmarking study comparing Wormhole to current approaches for compuing Wasserstein distance and acceleration thereof. Briefly, we sampled different sized cohorts from each dataset (MNIST or ModelNet40) and measured the time required for Wormhole, Sinkhorn, Low Rank (LR) Sinkhorn and MetaOT to produce the pairwise distance matrix, on a fully utilized 80GB GPU.  
 Other methods are more appropriate at tiny cohorts, as they do not require training a large, parametric model. However, even in cohorts with relatively few samples, Wormhole is superior. No method other than Wormhole can scale to complete datasets, requiring weeks of GPU time.
 
-We note that several points in the figure bellow are projections. Pairwise computation for each cohort was done in batches, and we simply measured the time it took for Sinkhorn, LR Sinkhorn and Meta-OT to go through 100 batches and extrapolated for an estiamte of how long the entire sample would take.
+We note that several points in the figure bellow are projections. Pairwise computation for each cohort was done in batches, and we simply measured the time it took for Sinkhorn, LR Sinkhorn and Meta-OT to go through 100 batches and extrapolated for an estiamte of how long the entire sample would take. Please see details in notebooks MNIST_time_comparison.ipynb & ModelNet40_time_comparison.ipynb.
 
 ![alt text](RebuttalFigures/TimeComparisonAll.png?raw=true)
 
