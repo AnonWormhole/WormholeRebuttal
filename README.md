@@ -10,7 +10,7 @@ We note that several points in the figure bellow are projections. Pairwise compu
 
 We next extended our comparisons and evaluated Wormhole against DWE from ‘Learning Wasserstein Embeddings’, in addition to DiffusionEMD and Frechet based approximation. Despite the DWE code being defunct, we have completely updated it to python3 and JAX during the rebuttal period (https://github.com/AnonWormhole/jax_dwe/tree/main). We show that on low dimensional 2D and 3D point clouds, Wormhole produces more accurate embeddings.
 
-Wormhole is also the only current OT based embedding method which can be applied to high-dimensional point-clouds. We further demonstrate this key feature by extending our manuscript to include two additional datasets: A scRNA-seq atlas of COVID patients and a spatial transcriptomics (seqFISH) dataset of mouse embryogenesis. Wormhole can produce accurate and OT preserving embeddings, while all other methods produce OOM errors.
+Wormhole is also the only current OT based embedding method which can be applied to high-dimensional point-clouds. We further demonstrate this key feature by extending our manuscript to include two additional datasets: A scRNA-seq atlas of COVID patients and a spatial transcriptomics (seqFISH) dataset of mouse embryogenesis. Wormhole can produce accurate and OT preserving embeddings, while all other cannot scale and return OOM errors.
 
 Finally, we have also updated our correlation scores to include average and standard deviations of 10 random samples of 128 points, as requested by several reviewers.
 
